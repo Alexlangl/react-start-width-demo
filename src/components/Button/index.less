@@ -1,0 +1,82 @@
+@primary_color: #288efc;
+@warning_color: #e6a23c;
+@error_color: #f12c5d;
+
+.button_default {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+.default_type_button {
+  color: #fff;
+}
+.ghost_type_button {
+  color: #333;
+}
+.href_button {
+  text-decoration: none;
+}
+
+#buttonCss(@defaultBgc,@hoverBgc) {
+  background-color: @defaultBgc;
+  &:hover,
+  &:focus {
+    background-color: @hoverBgc;
+  }
+}
+
+#ghostButton(@color) {
+  border: 1px solid @color;
+  &:hover,
+  &:focus {
+    border: 1px solid @color;
+    background-color: rgba(@color, 0.1);
+    color: @color;
+  }
+}
+
+#textButton(@color) {
+  color: @color;
+  &:hover,
+  &:focus {
+    color: rgba(@color, 0.8);
+  }
+}
+.primary_button {
+  #buttonCss(@primary_color, #67b4eb);
+}
+
+.warning_button {
+  #buttonCss(@warning_color, #f5dab1);
+}
+
+.error_button {
+  #buttonCss(@error_color, #eb8686);
+}
+
+.ghost_primary_button {
+  #ghostButton(@primary_color);
+}
+
+.ghost_warning_button {
+  #ghostButton(@warning_color);
+}
+
+.ghost_error_button {
+  #ghostButton(@error_color);
+}
+
+.text_primary_button {
+  #textButton(@primary_color);
+}
+
+.text_warning_button {
+  #textButton(@warning_color);
+}
+
+.text_error_button {
+  #textButton(@error_color);
+}
